@@ -19,7 +19,7 @@ func ViewProfile(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Ocurrio un error al buscar el perfil.", 400)
 		return
 	}
-	w.Header().Set("context-type", "application/json")
+	w.Header().Set("Content-type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	json.NewEncoder(w).Encode(perfil)
 }
